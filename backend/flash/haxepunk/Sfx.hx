@@ -237,6 +237,9 @@ class Sfx
 	public var playing(get, null):Bool;
 	inline function get_playing():Bool return _channel != null;
 
+	public var looping(get, null):Bool;
+	inline function get_looping():Bool return _looping;
+
 	/**
 	 * Position of the currently playing sound, in seconds.
 	 */
