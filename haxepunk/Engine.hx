@@ -273,6 +273,10 @@ class Engine
 		}
 	}
 
+    public function getSceneCount():Int {
+        return _scenes.length;
+    }
+
 	/**
 	 * Push a scene onto the stack. It will not become active until the next update.
 	 * @param value  The scene to push
