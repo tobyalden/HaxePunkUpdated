@@ -8,6 +8,7 @@ import haxepunk.math.Random;
 import haxepunk.math.Rectangle;
 import haxepunk.math.Vector2;
 import haxepunk.tweens.misc.Alarm;
+import haxepunk.tweens.misc.FramePerfectAlarm;
 import haxepunk.tweens.misc.MultiVarTween;
 import haxepunk.utils.HaxelibInfo;
 
@@ -421,6 +422,16 @@ class HXP
 		if (tweener == null) tweener = HXP.tweener;
 
 		var alarm:Alarm = new Alarm(delay, complete, type);
+		tweener.addTween(alarm, true);
+		return alarm;
+	}
+
+	public static function framePerfectAlarm(delay:Int, complete:Void -> Void, ?type:TweenType, ?tweener:Tweener):FramePerfectAlarm
+	{
+		if (type == null) type = TweenType.OneShot;
+		if (tweener == null) tweener = HXP.tweener;
+
+		var alarm:FramePerfectAlarm = new FramePerfectAlarm(delay, complete, type);
 		tweener.addTween(alarm, true);
 		return alarm;
 	}
