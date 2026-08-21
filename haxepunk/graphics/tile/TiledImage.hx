@@ -73,7 +73,7 @@ class TiledImage extends Image
 		{
 			y += _sourceRect.height * sy;
 			y2 = floorY(camera, y) * fsy;
-			while (x1 < _width * sx * HXP.screen.scaleX)
+			while (x1 < _width * sx * fsx)
 			{
 				x += _sourceRect.width * sx;
 				x2 = floorX(camera, x) * fsx;
